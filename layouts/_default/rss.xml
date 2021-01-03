@@ -8,7 +8,7 @@
   <channel>
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
     <link>{{ .Permalink }}</link>
-    <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
+    <description>On a journey to learn Chamoru via blogging in Chamoru!</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.Language.Lang }}
     <language>{{.}}</language>{{end}}{{ with $.Site.Params.email }}
     <managingEditor>{{.}}{{ with $.Site.Params.myname }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Params.email }}
@@ -33,10 +33,10 @@
         <title>{{ .Title }}</title>
         <link>{{ .Permalink }}</link>
         <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-        {{ with .Site.Params.email }}<author>{{.}}{{ with $.Site.Params.myname }} ({{.}}){{end}}</author>{{end}}
+        <author>{{ with $.Site.Params.myname }}{{.}}{{end}}</author>
         {{ with .Params.Lastmod }}<atom:modified>{{ .Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</atom:modified>{{end}}
         <guid>{{ .Permalink }}</guid>
-        <description>{{ .Summary | html }}</description>
+        <description>{{ .Description | html }}</description>
         {{ if .Site.Params.fullContents }}<content:encoded>{{ .Content | html }}</content:encoded>{{end}}
         {{ if .Params.author }}<dc:creator>{{ .Params.author }}</dc:creator>{{ else if .Site.Params.myname }}<dc:creator>{{ .Site.Params.myname }}</dc:creator>{{end}}
         {{ if .Params.image }}<media:content url="{{ .Site.BaseURL }}{{ .Params.image }}" medium="image"><media:title type="html">featured image</media:title></media:content>{{end}}
