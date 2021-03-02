@@ -5,12 +5,12 @@
   overflow-wrap: break-word;
 
   &__title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 900;
     font-family: $title-font;
     line-height: 3rem;
     overflow-wrap: break-word;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     
     @include themify($themes) {
@@ -97,7 +97,7 @@
     }
 
     margin: 1rem 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.7;
     width: inheirt;
     max-width: inherit;
